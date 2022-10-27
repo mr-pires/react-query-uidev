@@ -7,7 +7,6 @@ export default function IssuesList() {
     ['issues'],
     () => fetch('/api/issues').then(res => res.json())
   )
-  console.log(issuesQuery.data)
   return (
     <div>
       <h2>Issues List</h2>
