@@ -1,14 +1,16 @@
 import { useState } from "react";
 import IssuesList from "../components/IssuesList";
 import LabelList from "../components/LabelList";
+import { StatusSelect } from "../components/StatusSelect";
 export default function Issues() {
   const [labels, setLabels] = useState([])
+  const [status, setStatus] = useState([])
   return (
     <div>
       <main>
         <section>
           <h1>Issues</h1>
-          <IssuesList labels={labels}/>
+          <IssuesList labels={labels} status={status}/>
         </section>
         <aside>
           <LabelList 
@@ -22,8 +24,23 @@ export default function Issues() {
                 : currentLabels.concat(label)
               )
             }/>
+            <h3>Status</h3>
+            <StatusSelect 
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+            />
         </aside>
       </main>
     </div>
   );
 }
+
+export const possibleStatus = [
+  {id: 'backlog', label:'Backlog'},
+  {id: 'todo', label:'To-do'},
+  {id: 'inProgress', label:'In Progress'},
+  {id: 'done', label:'Done'},
+  {id: 'canceled', label:'Canceled'},
+]
+
+
