@@ -6,7 +6,8 @@ import { BrowserRouter } from "react-router-dom";
 import { worker } from "@uidotdev/react-query-api";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-const queryClient = new QueryClient
+const queryClient = new QueryClient();
+
 new Promise((res) => setTimeout(res, 100))
   .then(() =>
     worker.start({

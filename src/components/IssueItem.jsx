@@ -29,7 +29,7 @@ export function IssueItem({
         <span>
           <Link to={`/issue/${number}`}>{title}</Link>
           {labels.map((label) => (
-            <Label key={label} label={label}/>
+            <Label key={label} label={label} />
           ))}
         </span>
         <small>
@@ -59,5 +59,3 @@ export function IssueItem({
     </li>
   );
 }
-
-
